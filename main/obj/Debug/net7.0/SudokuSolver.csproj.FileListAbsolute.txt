@@ -1,0 +1,15 @@
+/home/uhc121/Code/Projects/MyProjects/SudokuSolver/main/bin/Debug/net7.0/SudokuSolver
+/home/uhc121/Code/Projects/MyProjects/SudokuSolver/main/bin/Debug/net7.0/SudokuSolver.deps.json
+/home/uhc121/Code/Projects/MyProjects/SudokuSolver/main/bin/Debug/net7.0/SudokuSolver.runtimeconfig.json
+/home/uhc121/Code/Projects/MyProjects/SudokuSolver/main/bin/Debug/net7.0/SudokuSolver.dll
+/home/uhc121/Code/Projects/MyProjects/SudokuSolver/main/bin/Debug/net7.0/SudokuSolver.pdb
+/home/uhc121/Code/Projects/MyProjects/SudokuSolver/main/obj/Debug/net7.0/SudokuSolver.csproj.AssemblyReference.cache
+/home/uhc121/Code/Projects/MyProjects/SudokuSolver/main/obj/Debug/net7.0/SudokuSolver.GeneratedMSBuildEditorConfig.editorconfig
+/home/uhc121/Code/Projects/MyProjects/SudokuSolver/main/obj/Debug/net7.0/SudokuSolver.AssemblyInfoInputs.cache
+/home/uhc121/Code/Projects/MyProjects/SudokuSolver/main/obj/Debug/net7.0/SudokuSolver.AssemblyInfo.cs
+/home/uhc121/Code/Projects/MyProjects/SudokuSolver/main/obj/Debug/net7.0/SudokuSolver.csproj.CoreCompileInputs.cache
+/home/uhc121/Code/Projects/MyProjects/SudokuSolver/main/obj/Debug/net7.0/SudokuSolver.dll
+/home/uhc121/Code/Projects/MyProjects/SudokuSolver/main/obj/Debug/net7.0/refint/SudokuSolver.dll
+/home/uhc121/Code/Projects/MyProjects/SudokuSolver/main/obj/Debug/net7.0/SudokuSolver.pdb
+/home/uhc121/Code/Projects/MyProjects/SudokuSolver/main/obj/Debug/net7.0/SudokuSolver.genruntimeconfig.cache
+/home/uhc121/Code/Projects/MyProjects/SudokuSolver/main/obj/Debug/net7.0/ref/SudokuSolver.dll

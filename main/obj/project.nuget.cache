@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BsLPKn6H500W7RzytJ2+zvCAhHGHUC1DJauV9QbHwan8TolHv8ZSWzKjfD/CTbejIPXQbiDiGni2/3mwWzTsKQ==",
+  "dgSpecHash": "2Z6nDWrQrcxdrTMK9Z7MsxwXZ43WTobqrCOl48qLRmZL6hLh8p9DikQDfvlfRmtn7cojkO183u+KPetZc/cJHQ==",
   "success": true,
-  "projectFilePath": "/home/uhc121/Code/Projects/MyProjects/SudokuSolver/SudokuSolver.csproj",
+  "projectFilePath": "/home/uhc121/Code/Projects/MyProjects/SudokuSolver/main/SudokuSolver.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
