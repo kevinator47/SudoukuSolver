@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks.Dataflow;
-
-namespace SudokuSolver;
+﻿namespace SudokuSolver;
 
 public class Sudoku
 {
@@ -33,14 +31,14 @@ public class Sudoku
         
         //[caso recursivo]
         if(table[currentSquare / 9 , currentSquare % 9] != 0) // la casilla ya esta llena
-            return Solve(currentSquare++) ; 
+            return Solve(currentSquare + 1) ; 
         
         // si la casilla no esta llena
         foreach (int option in GetOptions(currentSquare))
         {
             Write(option , currentSquare);
 
-            if(Solve(currentSquare++)) // si escribiendo esta opcion se llega a una solucion perfecto, sino se probara la siguiente opcion hasta quedarse sin opciones.
+            if(Solve(currentSquare + 1)) // si escribiendo esta opcion se llega a una solucion perfecto, sino se probara la siguiente opcion hasta quedarse sin opciones.
                 return true ;
         }
         // Al quedarse sin opciones, borra y vuelve a casillas anteriores
@@ -49,6 +47,59 @@ public class Sudoku
     }
     private void Write(int value, int square) => table[square / 9 , square % 9] = value;
     private void Erase(int square) => Write(0,square);
+
+    private IEnumerable<int> GetOptions(int currentSquare)
+    {
+        Set<int> rowOp = GetRowOptions(currentSquare);
+        Set<int> columnOp = GetColumnOptions(currentSquare);
+        Set<int> chartOp = GetChartOptions(currentSquare);
+
+        return rowOp.Intersect(columnOp.Intersect(chartOp));
+    }
+
+    private Set<int> GetRowOptions(int square)
+    {
+        List<int> options = new List<int>(){1,2,3,4,5,6,7,8,9};
+        int row = square / 9 ;
+
+        for(int j = 0 ; j < table.GetLength(1) ; j++)
+        {
+            options.Remove(table[row, j]);
+        }
+
+        return new Set<int>(options);
+    }
+
+    private Set<int> GetColumnOptions(int square)
+    {
+        List<int> options = new List<int>(){1,2,3,4,5,6,7,8,9};
+        int column = square % 9 ;
+
+        for(int i = 0 ; i < table.GetLength(0) ; i++)
+        {
+            options.Remove(table[i, column]);
+        }
+        return new Set<int>(options);
+    }
+
+    private Set<int> GetChartOptions(int square)
+    {
+        List<int> options = new List<int>(){1,2,3,4,5,6,7,8,9};
+        
+        int startingRow = 3 * (square / 27) ;
+
+        int column = square % 9 ;
+        int startingColumn = 3 * (column / 3) ;
+
+        for(int i = 0 ; i <= 2 ; i++)
+        {
+            for(int j = 0 ; j <= 2 ; j++)
+            {
+                options.Remove(table[startingRow + i , startingColumn + j]);
+            }
+        } 
+        return new Set<int>(options);
+    }
 
     public string PrettyPrint()
     {

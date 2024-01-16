@@ -5,8 +5,11 @@ class Program
     {
         Console.Write("Ingrese el sudoku a resolver : ");
         string? input = Console.ReadLine();
+        
         var sdk = new Sudoku(Stdrize(input));  
-        System.Console.WriteLine(sdk.PrettyPrint());
+        sdk.Solve();
+        
+        Console.WriteLine(sdk.PrettyPrint());
     }
 
     private static List<int> Stdrize(string? input)
