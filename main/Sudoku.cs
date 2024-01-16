@@ -1,4 +1,6 @@
-﻿namespace SudokuSolver;
+﻿using System.Threading.Tasks.Dataflow;
+
+namespace SudokuSolver;
 
 public class Sudoku
 {
@@ -16,6 +18,37 @@ public class Sudoku
             table[ i / 9 , i % 9] = digits[i];
         }
     }
+
+    public bool Solve() // metodo mascara
+    {
+        return Solve(0);
+    }
+    private bool Solve(int currentSquare)
+    {
+        // [caso base] : si ya se llenaron todas las casillas del sudoku
+        if(currentSquare >= table.Length)
+        {
+            return true ;
+        }
+        
+        //[caso recursivo]
+        if(table[currentSquare / 9 , currentSquare % 9] != 0) // la casilla ya esta llena
+            return Solve(currentSquare++) ; 
+        
+        // si la casilla no esta llena
+        foreach (int option in GetOptions(currentSquare))
+        {
+            Write(option , currentSquare);
+
+            if(Solve(currentSquare++)) // si escribiendo esta opcion se llega a una solucion perfecto, sino se probara la siguiente opcion hasta quedarse sin opciones.
+                return true ;
+        }
+        // Al quedarse sin opciones, borra y vuelve a casillas anteriores
+        Erase(currentSquare);
+        return false ;
+    }
+    private void Write(int value, int square) => table[square / 9 , square % 9] = value;
+    private void Erase(int square) => Write(0,square);
 
     public string PrettyPrint()
     {
