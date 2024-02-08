@@ -3,13 +3,18 @@ class Program
 {
     static void Main()
     {
-        Console.Write("Ingrese el sudoku a resolver : ");
-        string? input = Console.ReadLine();
+        string? input ;
+        do
+        {
+            Console.Write("Ingrese el sudoku a resolver : ");
+            input = Console.ReadLine();
         
-        var sdk = new Sudoku(Stdrize(input));  
-        sdk.Solve();
+            var sdk = new Sudoku(Stdrize(input));  
+            sdk.Solve();
         
-        Console.WriteLine(sdk.PrettyPrint());
+            Console.WriteLine(sdk.PrettyPrint());    
+        } while (input != "");
+        
     }
 
     private static List<int> Stdrize(string? input)
